@@ -62,7 +62,6 @@ class wechatCallbackapiTest
                     $result = $this->receiveVoice($postObj);
                     break;
                 case "video":
-				case "shortvideo":
                     $result = $this->receiveVideo($postObj);
                     break;
                 case "link":
@@ -172,7 +171,11 @@ class wechatCallbackapiTest
         }else if (strstr($keyword, "单图文")){
             $content = array();
             $content[] = array("Title"=>"微信开发",  "Description"=>"微信开发", "PicUrl"=>"http://discuz.comli.com/weixin/weather/icon/cartoon.jpg", "Url" =>"http://m.cnblogs.com/?u=txw1958");
-        }else if (strstr($keyword, "微信应用号")){
+        }
+        else if (strstr($keyword, "图片")){
+                    $content = array();
+                    $content[] = array("Title"=>"每日一图",  "Description"=>"醉前端--每日图片", "PicUrl"=>"http://img.taopic.com/uploads/allimg/130711/318756-130G1222R317.jpg", "Url" =>"http://m.cnblogs.com/?u=txw1958");
+                }else if (strstr($keyword, "微信应用号")){
             $content = array();
             $content[] = array("Title"=>"微信应用好开发资源汇总",  "Description"=>"目前为止最全的应用号开发资源汇总,包括文档,开发工具,破解,开发文档,示例源码...", "PicUrl"=>"http://discuz.comli.com/weixin/weather/icon/cartoon.jpg", "Url" =>"https://github.com/xlChang2016/wechatApp-dev");
         }else if (strstr($keyword, "开发")){
