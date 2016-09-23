@@ -1,0 +1,75 @@
+/*iphone4*/
+@media screen and (device-aspect-ratio: 2/3){
+.a p{
+	padding-top:2px;
+	}
+.b_b{
+	margin-top:1%;
+	}
+.b_c{
+	margin-top:1%;
+	}
+.b_f{
+	margin-top:1%;
+	}
+.b_e{
+	margin-top:1%;
+	}
+.b_f{
+	margin-top:1%;
+	}
+.b_h{
+	margin-top:1%;
+	}
+.i_a{
+	top:5px;
+	}
+.i_b{
+	top:20px;
+	}
+.i_c{
+	top:20px;
+	}
+.i_d{
+	top:230px;
+	}
+.i_e{
+	top:192px;
+	}
+.i_f{
+	top:10px;
+	}
+.ljsk_bg{
+	top:60px;
+	}
+.z_a{
+	top:5px;
+	}
+.z_b{
+	top:60px;
+	}
+.z_c{
+	top:64px;
+	}
+.z_d{
+	top:610px;
+	}
+.z_e{
+	top:650px;
+	}
+.z_f{
+	top:615px;
+	}
+.z_g{
+	top:710px;
+	}
+.z_h{
+	top:760px;
+	}
+.z_w{
+	top:665px;
+	}
+.z_z{
+	top:665px;
+	}
+}

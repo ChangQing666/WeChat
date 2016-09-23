@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>情满中秋 月下有礼</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mid-autumn.css"/>
+</head>
+<body>
+<img class="bg_img" src="img/bg.jpg" alt="">
+<!--背景音乐-->
+<div class="on" id="bg_music">
+    <audio src="bg_music.mp3" id="media" autoplay="autoplay" loop="loop"></audio>
+</div>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <!--第一页-->
+        <div class="swiper-slide page1">
+            <!--<div class="page1_box">   </div>-->
+            <div class="top">
+                <img  src="img/page1_0.png">
+            </div>
+            <div class="middle">
+                <img src="<?=IMGURL?>topic/mid-autumn//page1_1.png">
+            </div>
+            <div class="btn_slidedown">
+                <img class="bounce"  src="<?=IMGURL?>topic/mid-autumn//btn_slidedown.png">
+            </div>
+
+        </div>
+        <div class="swiper-slide page2">
+            <div class="top"><img src="img/page2_0.png"></div>
+            <div class="middle"><img src="img/page2_1.png"></div>
+            <div class="btn_slidedown">
+                <img class="bounce" src="img/btn_slidedown.png">
+            </div>
+        </div>
+        <!--选月饼页-->
+        <div class="swiper-slide page3 swiper-no-swiping">
+            <!--选择框-->
+            <ul class="ul_check">
+                <li>
+                    <div class="checkbox"></div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                </li>
+                <li>
+                    <div class="checkbox"></div>
+                </li>
+            </ul>
+            <!--月饼-->
+            <img class="m1" src="img/m_1.gif">
+            <img class="m2" src="img/m_2.gif">
+            <img class="m3" src="img/m_3.gif">
+            <img class="m4" src="img/m_4.gif">
+            <img class="m5" src="img/m_5.png">
+            <img class="m6" src="img/m_6.gif">
+            <img class="m7" src="img/m_7.gif">
+            <img class="m8" src="img/m_8.gif">
+            <!--月饼名称-->
+            <ul class="ul_name">
+                <li><p>五仁月饼</p></li>
+                <li><p>豆沙月饼</p></li>
+                <li><p>莲蓉月饼</p></li>
+                <li><p>蛋黄月饼</p></li>
+                <li><p>玫瑰月饼</p></li>
+                <li><p>肉松月饼</p></li>
+                <li><p>芝麻月饼</p></li>
+                <li><p>水果月饼</p></li>
+            </ul>
+
+            <!--选月饼透明蒙版ul-->
+            <ul class="ul_sel_mask">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <div class="btn_confirm"></div>
+            <div class="modal_info">
+                <div class="info_box">
+                    <p>亲，测试需要先选一款月饼哦！</p>
+                    <div class="btn">确定</div>
+                </div>
+            </div>
+
+            <div class="modal">
+                <img class="share_img" src="img/share.png">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+    var id = parseInt('<?=$rid?>');
+    var shareCode = '<?=$code?>';
+    var zhaoshaHost = 'http://huodong.zhaosha.com/';
+    var shareUrl = zhaoshaHost + 'zhongqiu.html';
+    var staticUrl = '<?=IMGURL?>topic/mid-autumn/';
+    var resultUrl = zhaoshaHost + 'zhongqiu/' + shareCode + '.html';
+    var shareImgUrl = staticUrl + 'img/shareImg.jpeg';
+    var shareTitle = '咦，我的乖乖！原来我是这种人！';
+    var shareDescription = '怪我咯！虽然我很自恋，但这答案可不是我自个儿说的！';
+    var appId = '<?=$signPackage["appId"];?>';
+    var timestamp = '<?=$signPackage["timestamp"];?>';
+    var nonceStr = '<?=$signPackage["nonceStr"];?>';
+    var signature = '<?=$signPackage["signature"];?>';
+    var page = 0;
+    if (id) {
+        page = 2;
+    }
+</script>
+<script src="js/swiper.min.js"></script>
+<script src="js/mid-autumn.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    wx.config({
+        appId: appId,
+        timestamp: timestamp,
+        nonceStr: nonceStr,
+        signature: signature,
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ']
+    });
+    wx.ready(function () {
+        wx.onMenuShareTimeline({
+            title: shareTitle, // 分享标题
+            link: resultUrl, // 分享链接
+            imgUrl: shareImgUrl, // 分享图标
+            success: function () {
+                // 用户确认分享后执行的回调函数
+                if (id ) {
+                    window.location.href = resultUrl + '?rid=' + id;
+                }
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+        wx.onMenuShareAppMessage({
+            title: shareTitle, // 分享标题
+            desc: shareDescription, // 分享描述
+            link: resultUrl, // 分享链接
+            imgUrl: shareImgUrl, // 分享图标
+            type: '', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+                if (id) {
+                    window.location.href = resultUrl + '?rid=' + id;
+                }
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+            }
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        audioAutoPlay();
+        console.log('DOMContentLoaded')
+    });
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        audioAutoPlay();
+        console.log("wx_ready")
+    });
+    function audioAutoPlay() {
+        var audio = $("#media")[0];
+        audio.play();
+        audio.loop = true;
+    }
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?fcde1d5a3c9713a2365b5d75d518610c";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

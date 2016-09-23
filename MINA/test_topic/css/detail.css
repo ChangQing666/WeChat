@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+}
+.bg_img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  width: 10rem;
+  height: 17.75rem;
+}
+.page_detail {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+div.moon {
+  position: absolute;
+  top: 0.53125rem;
+  left: 3.625rem;
+}
+div.moon > img {
+  width: 2.75rem;
+  height: 4rem;
+}
+div.txt_detail {
+  position: absolute;
+  top: 5.375rem;
+  left: 0.90625rem;
+}
+div.txt_detail > div {
+  width: 8.1875rem;
+  height: 5.875rem;
+  font-size: 0.46875rem;
+  line-height: 0.640625rem;
+  text-indent: 2em;
+  text-align: left;
+  color: #4b3604;
+}
+.page_detail > .btn_box {
+  width: 7.34375rem;
+  height: 0.8125rem;
+  position: absolute;
+  bottom: 3.609375rem;
+  left: 1.328125rem;
+}
+.page_detail > .btn_box div {
+  width: 3.125rem;
+  height: 0.8125rem;
+}
+.btn_onceAgain {
+  float: left;
+  background: url(../img/onceAgain_.png) no-repeat;
+  background-size: contain;
+}
+.btn_onceAgain:hover {
+  background: url(../img/onceAgain_hover.png) no-repeat;
+  background-size: contain;
+}
+.btn_more {
+  float: left;
+  background: url(../img/more_.png) no-repeat;
+  background-size: contain;
+}
+.btn_more:hover {
+  background: url(../img/more_hover.png) no-repeat;
+  background-size: contain;
+}
+.page_detail > .btn_box .btn_more {
+  float: right;
+}
+.logo {
+  position: absolute;
+  bottom: 2.140625rem;
+  left: 3.703125rem;
+}
+.logo > img {
+  width: 2.59375rem;
+  height: 0.78125rem;
+}
+.btm_banner {
+  position: absolute;
+  bottom: 0;
+  width: 10rem;
+  height: 1.796875rem;
+}
+.btm_banner > img {
+  width: 10rem;
+  height: 1.796875rem;
+}
