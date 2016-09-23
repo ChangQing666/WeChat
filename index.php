@@ -1,7 +1,8 @@
 <?php
 /*
-    方倍工作室 http://www.fangbei.org/
-    CopyRight 2015 All Rights Reserved
+   * editor:     ChangQing
+   * edit time:  2016/09/23
+   * CopyRight 2015 All Rights Reserved
 */
 header('Content-type:text');
 
@@ -170,8 +171,14 @@ class wechatCallbackapiTest
             $content = "微笑：/::)\n乒乓：/:oo\n中国：".$this->bytes_to_emoji(0x1F1E8).$this->bytes_to_emoji(0x1F1F3)."\n仙人掌：".$this->bytes_to_emoji(0x1F335);
         }else if (strstr($keyword, "单图文")){
             $content = array();
-            $content[] = array("Title"=>"单图文标题",  "Description"=>"单图文内容", "PicUrl"=>"http://discuz.comli.com/weixin/weather/icon/cartoon.jpg", "Url" =>"http://m.cnblogs.com/?u=txw1958");
-        }else if (strstr($keyword, "图文") || strstr($keyword, "多图文")){
+            $content[] = array("Title"=>"微信开发",  "Description"=>"微信开发", "PicUrl"=>"http://discuz.comli.com/weixin/weather/icon/cartoon.jpg", "Url" =>"http://m.cnblogs.com/?u=txw1958");
+        }else if (strstr($keyword, "微信应用号")){
+            $content = array();
+            $content[] = array("Title"=>"微信应用好开发资源汇总",  "Description"=>"目前为止最全的应用号开发资源汇总,包括文档,开发工具,破解,开发文档,示例源码...", "PicUrl"=>"http://discuz.comli.com/weixin/weather/icon/cartoon.jpg", "Url" =>"https://github.com/xlChang2016/wechatApp-dev");
+        }else if (strstr($keyword, "开发")){
+                     $content = array();
+                     $content[] = array("Title"=>"开发资源汇总",  "Description"=>"目前为止最全的应用号开发资源汇总,包括文档,开发工具,破解,开发文档,示例源码...", "PicUrl"=>"http://discuz.comli.com/weixin/weather/icon/cartoon.jpg", "Url" =>"https://github.com/xlChang2016/Web-by-ChangQing");
+        } else if (strstr($keyword, "图文") || strstr($keyword, "多图文")){
             $content = array();
             $content[] = array("Title"=>"多图文1标题", "Description"=>"", "PicUrl"=>"http://discuz.comli.com/weixin/weather/icon/cartoon.jpg", "Url" =>"http://m.cnblogs.com/?u=txw1958");
             $content[] = array("Title"=>"多图文2标题", "Description"=>"", "PicUrl"=>"http://d.hiphotos.bdimg.com/wisegame/pic/item/f3529822720e0cf3ac9f1ada0846f21fbe09aaa3.jpg", "Url" =>"http://m.cnblogs.com/?u=txw1958");
